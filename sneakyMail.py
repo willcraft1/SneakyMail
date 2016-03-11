@@ -1,9 +1,10 @@
 #!/usr/bin/python
 
-from scapy.all import *
 import argparse
 import sys
 import time
+from msgHandler import *
+from frameHandler import *
 
 def getArgs():
     parser = argparse.ArgumentParser()
@@ -17,4 +18,13 @@ def main(args):
     port = args.port
     msg = args.msg
 
+    if msg != None:
+	print ("sending " + targetIP + ":" + port + " -- " + msg)
+#    	sendCovertMsg(getMsgArray(msg), targetIP, port)
+    else:
+	print ("waiting for message on port " + port + "...")
+#	recieveCovertMsg(port)
+
+
 main(getArgs())
+
