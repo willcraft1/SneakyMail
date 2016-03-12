@@ -20,11 +20,10 @@ def main(args):
 
     if msg != None:
 	print ("sending " + targetIP + ":" + port + " -- " + msg)
-#	print (getMsgArray(msg))
-    	sendCovertMsg(getMsgArray(msg), targetIP, int(port))
+    	sendCovertMsg(getMsgArray(msg), targetIP, port)
     else:
 	print ("waiting for message on port " + port + "...")
-#	recieveCovertMsg(port)
+	recieveCovertMsg(port)
 
 
 main(getArgs())
